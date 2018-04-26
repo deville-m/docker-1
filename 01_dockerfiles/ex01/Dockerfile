@@ -1,3 +1,6 @@
+# run docker with:
+# docker run --rm -d -p 9987:9987/udp -p 11011:11011 -p 30033:30033 <img-name>
+
 FROM debian
 
 ENV TS3SERVER_LICENSE accept
@@ -11,5 +14,7 @@ RUN apt-get update -y && \
 	rm cyka.tar.bz2
 
 EXPOSE 9987/udp
+EXPOSE 30033/tcp
+EXPOSE 11011/tcp
 
 CMD /teamspeak3-server_linux_amd64/ts3server_minimal_runscript.sh
