@@ -5,7 +5,7 @@ FROM debian
 
 ENV TS3SERVER_LICENSE accept
 
-ADD http://dl.4players.de/ts/releases/3.1.2/teamspeak3-server_linux_amd64-3.1.2.tar.bz2 ./cyka.tar.bz2
+ADD http://dl.4players.de/ts/releases/3.2.0/teamspeak3-server_linux_amd64-3.2.0.tar.bz2 ./cyka.tar.bz2
 
 RUN apt-get update -y && \
 	apt-get upgrade -y && \
@@ -14,7 +14,7 @@ RUN apt-get update -y && \
 	rm cyka.tar.bz2
 
 EXPOSE 9987/udp
-EXPOSE 30033/tcp
-EXPOSE 11011/tcp
+EXPOSE 30033
+EXPOSE 11011
 
 CMD /teamspeak3-server_linux_amd64/ts3server_minimal_runscript.sh
