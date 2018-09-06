@@ -3,9 +3,9 @@
 
 FROM debian
 
-ENV TS3SERVER_LICENSE accept
+ENV TS3SERVER_LICENSE=accept
 
-ADD http://dl.4players.de/ts/releases/3.2.0/teamspeak3-server_linux_amd64-3.2.0.tar.bz2 ./cyka.tar.bz2
+ADD http://dl.4players.de/ts/releases/3.3.1/teamspeak3-server_linux_amd64-3.3.1.tar.bz2 ./cyka.tar.bz2
 
 RUN apt-get update -y && \
 	apt-get upgrade -y && \
