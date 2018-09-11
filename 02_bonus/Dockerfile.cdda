@@ -1,0 +1,13 @@
+FROM debian
+
+RUN apt update -y && apt upgrade -y
+RUN apt install -y liblua5.1-0 liblua5.2-0
+
+WORKDIR /root
+
+ADD http://dev.narc.ro/cataclysm/jenkins-latest/Linux_x64/Curses/cataclysmdda-0.C-7894.tar.gz cdda.tar.gz
+RUN tar xvf cdda.tar.gz
+
+WORKDIR cataclysmdda-0.C
+
+ENTRYPOINT ./cataclysm-launcher
